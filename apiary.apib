@@ -1,5 +1,4 @@
 FORMAT: 1A
-HOST: http://www.google.com
 
 # MMRV
 MMRV API is a service for tracking RV related maintenance.
@@ -21,8 +20,54 @@ A single User object with all its details
             {
                 "id": 1,
                 "firstName": "John",
-                "lastName": "Doe"
+                "lastName": "Doe",
+                "vehicles": [1,2]
             }
 
 ### Remove a User [DELETE]
++ Response 204
+
+# Group Vehicle
+Vehicle related resources of the **MMRV API**
+
+## Vehicle [/vehicle/{id}]
+A single Vehicle object with basic information
+
++ Parameters
+    + id (required, number, `101`) ... Numeric `id` of the Vehicle to perform action with.
+    
+### Retrieve a Vehicle [GET]
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "id": 101,
+                "name": "Diesel Pusher",
+                "mileage": {
+                    "miles": 112789,
+                    "updated": "5/15/2014"
+                }
+            }
+
+### Create a Vehicle [POST]
++ Request (application/json)
+
+        {
+            "name": "Another Vehicle",
+            "mileage": {
+                "miles": 123456,
+                "updated": "5/8/2014"
+            }
+        }
+
++ Response 200(application/json)
+
+    + Body
+    
+            {
+                "id": 102
+            }
+
+### Remove a Vehicle [DELETE]
 + Response 204
