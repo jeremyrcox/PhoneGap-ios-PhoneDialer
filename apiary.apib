@@ -1,0 +1,28 @@
+FORMAT: 1A
+HOST: http://www.google.com
+
+# MMRV
+MMRV API is a service for tracking RV related maintenance.
+
+# Group User
+User related resources of the **MMRV API**
+
+## User [/user/{id}]
+A single User object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the User to perform action with.
+
+### Retrieve a User [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 1,
+                "firstName": "John",
+                "lastName": "Doe"
+            }
+
+### Remove a User [DELETE]
++ Response 204
